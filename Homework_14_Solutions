@@ -5,6 +5,7 @@ class Circle:
 
     def __init__(self, radius):
         self.__radius = radius
+        self.__max_passengers = max_passengers
 
     # Overloading the print method for easier testing
 
@@ -71,6 +72,12 @@ class Circle:
         if isinstance(other, int):
             self.__radius -= other
             return self
+
+    def __gt__(self, other):
+        if isinstance(other, Airplane):
+            return self.__max_passengers > other.__max_passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}.")
 
 
 circle1 = Circle(5)
