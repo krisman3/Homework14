@@ -1,0 +1,15 @@
+import math
+
+
+class Circle:
+
+    def __init__(self, radius):
+        self.__radius = radius
+
+    # Overloading the print method for easier testing
+
+    def circle_area(self):
+        return math.pi * self.__radius ** 2
+
+    def __str__(self):
+        return f"Circle radius: {self.__radius}\nCircle area: {math.pi * self.__radius ** 2}"
