@@ -106,6 +106,12 @@ class Airplane:
         self.__passengers = passengers
         self.__max_passengers = max_passengers
 
+    def get_passengers(self):
+        return self.__passengers
+
+    def get_max_passengers(self):
+        return self.__max_passengers
+
     def __eq__(self, other):
         if isinstance(other, Airplane):
             return self.__passengers == other.__passengers
