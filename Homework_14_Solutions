@@ -5,7 +5,6 @@ class Circle:
 
     def __init__(self, radius):
         self.__radius = radius
-        self.__max_passengers = max_passengers
 
     # Overloading the print method for easier testing
 
@@ -73,13 +72,6 @@ class Circle:
             self.__radius -= other
             return self
 
-    def __gt__(self, other):
-        if isinstance(other, Airplane):
-            return self.__max_passengers > other.__max_passengers
-        else:
-            raise TypeError(f"{other} is not a {type(Airplane)}.")
-
-
 circle1 = Circle(5)
 
 # print("Checking if the comparison operators work:")
@@ -110,8 +102,9 @@ print(circle1)
 
 class Airplane:
 
-    def __init__(self, passengers):
+    def __init__(self, passengers, max_passengers):
         self.__passengers = passengers
+        self.__max_passengers = max_passengers
 
     def __eq__(self, other):
         if isinstance(other, Airplane):
@@ -146,6 +139,30 @@ class Airplane:
             return self
         else:
             raise TypeError(f"{other} is not an integer.")
+
+    def __gt__(self, other):
+        if isinstance(other, Airplane):
+            return self.__max_passengers > other.__max_passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}.")
+
+    def __lt__(self, other):
+        if isinstance(other, Airplane):
+            return self.__max_passengers < other.__max_passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}.")
+
+    def __le__(self, other):
+        if isinstance(other, Airplane):
+            return self.__max_passengers <= other.__max_passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}.")
+
+    def __ge__(self, other):
+        if isinstance(other, Airplane):
+            return self.__max_passengers >= other.__max_passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}.")
 
 
 airplane1 = Airplane(75)
