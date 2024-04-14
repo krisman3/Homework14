@@ -100,3 +100,21 @@ print(circle1)
 #####################################
 
 ### Task 2:
+
+class Airplane:
+
+    def __init__(self, passengers):
+        self.__passengers = passengers
+
+    def __eq__(self, other):
+        if isinstance(other, Airplane):
+            return self.__passengers == other.__passengers
+        else:
+            raise TypeError(f"{other} is not a {type(Airplane)}")
+
+
+airplane1 = Airplane(75)
+airplane2 = Airplane(100)
+
+# Checking if they have equal number of passengers:
+print(airplane1 == airplane2)
