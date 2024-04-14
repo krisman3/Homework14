@@ -1,6 +1,7 @@
 # Homework14
 
 Task 1
+
 Create a Circle class. This class will encapsulate the concept of a circle primarily through its
 radius attribute. The radius should be a private attribute to ensure encapsulation.
 Overload the following operators:
@@ -20,6 +21,7 @@ instance.
 
 
 Task 2
+
 Create an Airplane class. Implement the following using the operator overloading:
 ● Check if the airplane types are equal (==)
 ● Increasing and decreasing the number of passengers in the cabin (the operators: + -
