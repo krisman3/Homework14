@@ -124,14 +124,14 @@ class Airplane:
     def __add__(self, other):
         if isinstance(other, int):
             new_passenger_count = self.__passengers + other
-            return Airplane(new_passenger_count)
+            return Airplane(new_passenger_count, self.__max_passengers)
         else:
             raise TypeError(f"{other} is not an integer.")
 
     def __sub__(self, other):
         if isinstance(other, int):
             new_passenger_count = self.__passengers - other
-            return Airplane(new_passenger_count)
+            return Airplane(new_passenger_count, self.__max_passengers)
         else:
             raise TypeError(f"{other} is not an integer.")
 
@@ -177,5 +177,14 @@ class Airplane:
 airplane1 = Airplane(75)
 airplane2 = Airplane(100)
 
-# Checking if they have equal number of passengers:
+print("Checking if they have equal number of passengers:")
 print(airplane1 == airplane2)
+
+print("Add in place: ")
+print(f"Original seat count: {airplane1.get_passengers()}\n")
+airplane1 += 100
+print(f"New seat count:\n{airplane1}")
+
+print("\nSubtract and create a new airplane:\n")
+airplane3 = airplane2 + 17
+print(airplane3)
