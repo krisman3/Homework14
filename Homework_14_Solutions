@@ -13,3 +13,17 @@ class Circle:
 
     def __str__(self):
         return f"Circle radius: {self.__radius}\nCircle area: {math.pi * self.__radius ** 2}"
+
+    # Checking if the circles are equal
+    def __eq__(self, other):
+        if isinstance(other, Circle):
+            return self.circle_area() == other.circle_area()
+        else:
+            raise TypeError(f"{type(other)} is not the same as {type(Circle)}.")
+
+    # Less than the other circle
+    def __lt__(self, other):
+        if isinstance(other, Circle):
+            return self.circle_area() < other.circle_area()
+        else:
+            raise TypeError(f"{type(other)} is not the same as {type(Circle)}.")
