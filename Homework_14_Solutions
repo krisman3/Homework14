@@ -27,3 +27,19 @@ class Circle:
             return self.circle_area() < other.circle_area()
         else:
             raise TypeError(f"{type(other)} is not the same as {type(Circle)}.")
+
+    # Greater than the other circle
+    def __gt__(self, other):
+        if isinstance(other, Circle):
+            return self.circle_area() > other.circle_area()
+        else:
+            raise TypeError(f"{type(other)} is not the same as {type(Circle)}.")
+
+    # Less or equals to the other circle
+    def __le__(self, other):
+        if isinstance(other, Circle):
+            return self.circle_area() <= other.circle_area()
+        else:
+            raise TypeError(f"{type(other)} is not the same as {type(Circle)}.")
+
+  
