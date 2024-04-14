@@ -112,6 +112,34 @@ class Airplane:
         else:
             raise TypeError(f"{other} is not a {type(Airplane)}")
 
+    def __add__(self, other):
+        if isinstance(other, int):
+            new_passenger_count = self.__passengers + other
+            return Airplane(new_passenger_count)
+        else:
+            raise TypeError(f"{other} is not an integer.")
+
+    def __sub__(self, other):
+        if isinstance(other, int):
+            new_passenger_count = self.__passengers - other
+            return Airplane(new_passenger_count)
+        else:
+            raise TypeError(f"{other} is not an integer.")
+
+    def __iadd__(self, other):
+        if isinstance(other, int):
+            self.__passengers += other
+            return self
+        else:
+            raise TypeError(f"{other} is not an integer.")
+
+    def __isub__(self, other):
+        if isinstance(other, int):
+            self.__passengers -= other
+            return self
+        else:
+            raise TypeError(f"{other} is not an integer.")
+
 
 airplane1 = Airplane(75)
 airplane2 = Airplane(100)
